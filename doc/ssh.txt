@@ -1,0 +1,13 @@
+# SSH CONFIG
+
+## Add servers to a dotfiles/ssh/config file in the following way:
+
+Host SOME_SHORTCUT 
+  Hostname hollowearthradio.org
+  User SOME_USERNAME 
+  Port SOME_PORT
+  
+## Setup a symbolic link like so:
+ln -s ~/bin/dotfiles/ssh/config.igored  ~/.ssh/config
+
+(Note, config.ignored is what we are ignoring in the .gitignore so this is not in our public repo)
