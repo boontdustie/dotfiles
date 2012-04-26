@@ -1,0 +1,4 @@
+# Will contain values used by other scripts and applications
+
+export PATH="~/bin:/usr/local/bin:$PATH:/usr/local/sbin"
+export EDITOR="vim" 	

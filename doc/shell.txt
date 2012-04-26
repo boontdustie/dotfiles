@@ -1,0 +1,10 @@
+## SHELL TRICKS ##
+
+####### BASICS
+
+^a 	 	 -> Go to the beginning of a line
+^e 		 -> Go to the end of a line
+^k 	 	 -> Delete everything to the right
+^w 		 -> Delete previous word
+ESC-B 		 -> Go back one word
+ESC-F		 -> Go forward one word 
