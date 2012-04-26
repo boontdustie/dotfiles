@@ -1,4 +1,6 @@
 # Will contain values used by other scripts and applications
 
 export PATH="~/bin:/usr/local/bin:$PATH:/usr/local/sbin"
-export EDITOR="vim" 	
+export CLICOLOR=1
+export LSCOLORS=CxFxCxDxBxegedabagacad
+export EDITOR='/usr/bin/vim'

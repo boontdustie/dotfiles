@@ -76,4 +76,4 @@ On_IWhite='\e[0;107m'   # White
 # You can turn colors off and on by picking a color, 
 # writing some text, then doing COLOR_OFF where you want the 
 # color to stop. 
-PS1="\u:\w \[$BICyan\] [$(vcprompt)] \n  ☞  \[$Color_Off\] "
+PS1="\[$IYellow\]✂-----------------------------------------------------------\n\w\n\[$Red\][$(vcprompt)]\[$Color_Off\]  \n\[$Yellow\]☞ \[$Color_Off\] "

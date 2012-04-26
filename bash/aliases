@@ -1,1 +1,2 @@
 # Shortcuts and functions that take arguments
+alias git="git diff --color-words"
