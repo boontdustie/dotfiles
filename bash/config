@@ -73,7 +73,13 @@ On_IPurple='\e[10;95m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
-# You can turn colors off and on by picking a color, 
-# writing some text, then doing COLOR_OFF where you want the 
-# color to stop. 
-PS1="\[$IYellow\]✂-----------------------------------------------------------\n\w\n\[$Red\][$(vcprompt)]\[$Color_Off\]  \n\[$Yellow\]☞ \[$Color_Off\] "
+update_prompt() {
+  # You can turn colors off and on by picking a color, 
+  # writing some text, then doing COLOR_OFF where you want the 
+  # color to stop. 
+  PS1="\[$IYellow\]✂-----------------------------------------------------------\n\w\n\[$Red\][$(vcprompt)]\[$Color_Off\]  \n\[$Yellow\]☞ \[$Color_Off\] "
+}
+
+# This gets executed everytime a prompt appears. This will 
+# refresh our vcprompt status when we change directories, etc.
+PROMPT_COMMAND=update_prompt

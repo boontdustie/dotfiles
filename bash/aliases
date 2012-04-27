@@ -2,17 +2,27 @@
 #Finder
 alias o='open . &'
 
+#Bundle
+alias be="bundle exec"
+alias beg='bundle exec guard -c'
+
 #Misc
 alias zipr='zip -r'  # Zip all files in the directory
-alias sb='source ~/.bashrc' # Source bash
+alias bs='source ~/.bashrc' # Source bash
 
 #Git
 alias g='git status'
 alias gb='git branch'
 alias gco='git checkout'
 alias gd='git diff'
+alias gp='git push origin master'
 
 # Commit pending changes and quote all args as message
 function gg() {
   git commit -v -a -m "$*"
-} 
+}
+
+#Common dirs
+
+alias wrk="cd /usr/local/src/"
+alias dotfile="cd ~/bin/dotfiles" 
