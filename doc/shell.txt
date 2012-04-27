@@ -8,3 +8,17 @@
 ^w 		 -> Delete previous word
 ESC-B 		 -> Go back one word
 ESC-F		 -> Go forward one word 
+
+
+!! 		 -> Previously executed command
+			(i.e. sudo !! after previous command failed)
+
+!$		 -> Las argument of previous command
+			touch README.txt
+			mate !$ => mate README.txt
+
+^r		 -> Interactive search of history
+
+### TRICKS
+
+mv README.{txt, textile}   =>  mv README.txt README.textile

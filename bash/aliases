@@ -1,2 +1,18 @@
 # Shortcuts and functions that take arguments
-alias git="git diff --color-words"
+#Finder
+alias o='open . &'
+
+#Misc
+alias zipr='zip -r'  # Zip all files in the directory
+alias sb='source ~/.bashrc' # Source bash
+
+#Git
+alias g='git status'
+alias gb='git branch'
+alias gco='git checkout'
+alias gd='git diff'
+
+# Commit pending changes and quote all args as message
+function gg() {
+  git commit -v -a -m "$*"
+} 
