@@ -21,8 +21,8 @@ alias ga='git add'
 alias gg='git commit -a'
 
 #Nav
-alias wrk="cd /usr/local/src/"
-alias df="cd ~/bin/dotfiles" 
+alias wrk="cd ~/work"
+alias df="cd ~/bin/dotfiles"
 
 #Rails
 alias sb="rails c --sandbox"

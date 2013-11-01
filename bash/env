@@ -3,4 +3,4 @@
 export PATH="~/bin:/usr/local/bin:$PATH:/usr/local/sbin"
 export CLICOLOR=1
 export LSCOLORS=CxFxCxDxBxegedabagacad
-export EDITOR='/usr/bin/vim'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -f'
