@@ -11,9 +11,6 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 export PATH="/usr/local/heroku/bin:$PATH"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export MARKPATH=$HOME/.marks
 jump() { cd -P $MARKPATH/$1 2> /dev/null || echo "No such mark: $1"; }
@@ -33,3 +30,9 @@ _jump() {
 complete -F _jump jump
 
 alias mkfolder='mkdir'
+
+function diff {
+    colordiff -u "$@" | less -RF
+}
+
+eval "$(rbenv init -)"
