@@ -1,20 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/boontdustie/.oh-my-zsh
 
-source ~/bin/dotfiles/plugins/antigen/antigen.zsh
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle ruby
-antigen bundle jump
-
-# Other bundles
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -57,7 +43,7 @@ ZSH_POWERLINE_SINGLE_LINE=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git jump)
+plugins=(git jump)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/local/heroku/bin:/Users/boontdustie/.rbenv/shims:/usr/local/heroku/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pgsql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin"
