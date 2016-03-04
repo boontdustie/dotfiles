@@ -76,7 +76,32 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Universal
+alias ..='cd ..'            # Go up one directory
+alias ...='cd ../..'        # Go up two directories
+alias ....='cd ../../..'    # And for good measure
+alias l='ls -lah'   # Long view, show hidden
+alias la='ls -AF'   # Compact view, show hidden
+alias ll='ls -lFh'  # Long view, no hidden
+
+# Git
 alias g="git status"
+
+# Garrett Scripts
+alias cmd="~/scripts/cmd"
+alias gistit='~/scripts/gistit'
+alias log='~/scripts/log'
+alias rebase='~/scripts/rebase'
+alias mcd='~/scripts/mc_delete'
+alias mcc='~/scripts/mc_count'
+alias ggd='~/scripts/gistgitdiff'
+alias r2='~/scripts/ruby-how2'
+
+# Custom work ~/bin scripts
+alias db_sync='~/bin/db_sync'
+alias ey_sync='~/bin/ey_sync'
+alias recreate_db="~/bin/recreate_db"
+alias sidekiq="~/bin/sidekiq"
 
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
 	tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }; alias transfer=transfer
