@@ -3,3 +3,4 @@ vendor/bundle
 .rake_tasks
 .imdone
 .imdoneignore
+.projectile

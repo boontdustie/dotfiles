@@ -3,6 +3,7 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (defun ensure-package-installed (&rest packages)
     "Assure every package is installed, ask for installation if it’s not.
@@ -34,8 +35,12 @@
 ;; THINGS TO LOAD ON STARTUP
 
 ;; General
-;;;; Select the help window automatically when opening
-(setq help-window-select t)
+(setq help-window-select t) ;; Automatically select help files
+(setq make-backup-files nil) ;; Don't make backup files
+
+(setq vc-follow-symlinks nil) ;; Just warn about following git controlled symlinks
+
+(setq large-file-warning-threshold nil) ;; Stop complaining about large TAGS file
 
 ;;;; Load the theme
 (load-theme 'manoj-dark)
@@ -43,6 +48,23 @@
 ;; Require and Load Evil Mode
 (require 'evil)
 (evil-mode t)
+
+;; Require and load Ido (for fuzzy completion)
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
+(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
+(defun ido-disable-line-truncation () (set (make-local-variable 'truncate-lines) nil))
+(add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-truncation)
+(defun ido-define-keys () ;; C-n/p is more intuitive in vertical layout
+  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match))
+  (add-hook 'ido-setup-hook 'ido-define-keys)
 
 ;; Load git gutter mode
 (global-git-gutter-mode +1)
@@ -119,3 +141,4 @@
 (add-hook 'org-capture-mode-hook
           (lambda ()
             (evil-insert-state)))
+(put 'erase-buffer 'disabled nil)

@@ -11,6 +11,10 @@ ZSH_POWERLINE_SHOW_USER=false
 ZSH_POWERLINE_SHOW_IP=false
 ZSH_POWERLINE_SINGLE_LINE=true
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
