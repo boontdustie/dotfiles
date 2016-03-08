@@ -30,10 +30,13 @@
 			  'helm
 			  'git-gutter
 			  'projectile
-			  'org)
+			  'org
+			  'flx-ido
+			  'windresize
+			  'evil-rails
+			  )
 
 ;; THINGS TO LOAD ON STARTUP
-
 ;; General
 (setq help-window-select t) ;; Automatically select help files
 (setq make-backup-files nil) ;; Don't make backup files
@@ -42,6 +45,9 @@
 
 (setq large-file-warning-threshold nil) ;; Stop complaining about large TAGS file
 
+(linum-mode t) ;; Show line number
+(setq linum-format "%4d\u007C ") ;; Format line number and space
+
 ;;;; Load the theme
 (load-theme 'manoj-dark)
 
@@ -49,7 +55,12 @@
 (require 'evil)
 (evil-mode t)
 
-;; Require and load Ido (for fuzzy completion)
+;; Load evil-rails
+;; https://github.com/antono/evil-rails
+;; https://github.com/asok/projectile-rails
+(require 'evil-rails)
+
+;; Require and load Flx Ido (for fuzzy completion)
 (require 'flx-ido)
 (ido-mode 1)
 (ido-everywhere 1)
@@ -71,9 +82,9 @@
 
 ;;;; Customize the git-gutter display
 (custom-set-variables
- '(git-gutter:modified-sign "  ")
- '(git-gutter:added-sign "+")
- '(git-gutter:deleted-sign "-"))
+'(git-gutter:added-sign "+")
+ '(git-gutter:deleted-sign "-")
+ '(git-gutter:modified-sign "  "))
 
 (set-face-background 'git-gutter:modified "purple") ;; background color
 (set-face-foreground 'git-gutter:added "green")
