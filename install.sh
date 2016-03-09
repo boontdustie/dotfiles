@@ -15,6 +15,3 @@ ln -s ${BASEDIR}/zshrc ~/.zshrc
 ln -s ${BASEDIR}/.gitconfig ~/.gitconfig
 ln -s ${BASEDIR}/.gitmodules ~/.gitmodules
 ln -s ${BASEDIR}/.gitignore ~/.gitignore
-
-# emacs
-ln -s ${BASEDIR}/emacs ~/.emacs

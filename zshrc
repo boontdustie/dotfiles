@@ -15,6 +15,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
+# aliased as git
+# https://github.com/github/hub
+eval "$(hub alias -s)"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
