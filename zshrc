@@ -104,6 +104,7 @@ alias mcd='~/scripts/mc_delete'
 alias mcc='~/scripts/mc_count'
 alias ggd='~/scripts/gistgitdiff'
 alias r2='~/scripts/ruby-how2'
+alias her='~/scripts/her'
 
 # Custom work ~/bin scripts
 alias db_sync='~/bin/db_sync'
