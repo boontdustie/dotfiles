@@ -1,0 +1,6 @@
+vendor/bundle
+.DS_Store
+.rake_tasks
+.imdone
+.imdoneignore
+.projectile

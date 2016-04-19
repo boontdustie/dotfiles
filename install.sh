@@ -12,6 +12,5 @@ ln -s ${BASEDIR}/bashrc ~/.bashrc
 ln -s ${BASEDIR}/zshrc ~/.zshrc
 
 # git
-ln -s ${BASEDIR}/.gitconfig ~/.gitconfig
-ln -s ${BASEDIR}/.gitmodules ~/.gitmodules
-ln -s ${BASEDIR}/.gitignore ~/.gitignore
+ln -s ${BASEDIR}/hidden/gitconfig ~/.gitconfig
+ln -s ${BASEDIR}/git/gitignore ~/.gitignore
