@@ -5,7 +5,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # vim
 ln -s ${BASEDIR}/vimrc ~/.vimrc
 
-# zsh
+# bash 
 ln -s ${BASEDIR}/bashrc ~/.bashrc
 
 # zsh
