@@ -15,10 +15,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
-# aliased as git
-# https://github.com/github/hub
-eval "$(hub alias -s)"
-
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
@@ -54,11 +50,9 @@ eval "$(hub alias -s)"
 plugins=(git jump ruby zsh-syntax-highlighting)
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/heroku/bin:/Users/boontdustie/.rbenv/shims:/usr/local/heroku/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pgsql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin"
+export PATH="/Users/boontdustie/bin:/usr/local/bin:/usr/local/heroku/bin:/Users/boontdustie/.rbenv/shims:/usr/local/heroku/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pgsql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/usr/texbin:/usr/local/bin/elixir"
 # export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -96,6 +90,7 @@ alias ll='ls -lFh'  # Long view, no hidden
 alias g="git status"
 
 # Garrett Scripts
+alias lynxer="~/scripts/lynxer"
 alias cmd="~/scripts/cmd"
 alias gistit='~/scripts/gistit'
 alias log='~/scripts/log'
@@ -105,6 +100,8 @@ alias mcc='~/scripts/mc_count'
 alias ggd='~/scripts/gistgitdiff'
 alias r2='~/scripts/ruby-how2'
 alias her='~/scripts/her'
+alias openqnl='~/scripts/openqnl'
+alias serve='~/scripts/serve'
 
 # Custom work ~/bin scripts
 alias db_sync='~/bin/db_sync'
@@ -112,7 +109,17 @@ alias ey_sync='~/bin/ey_sync'
 alias recreate_db="~/bin/recreate_db"
 alias sidekiq="~/bin/sidekiq"
 
-alias emacs="emacs -nw" # open emacs without window
+#alias emacs="emacs -nw" # open emacs without window
 
+# Secure file transfers
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
-	tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }; alias transfer=transfer
+        tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }; alias transfer=transfer
+
+# Generate passwords using pwgen
+# https://medium.com/@jdorfman/osx-password-generator-in-bash-48687892c4f3
+genpasswd() {
+  pwgen -Bs $1 1 | pbcopy |pbpaste; echo "Has been copied to clipboard"
+}
+
+export FIREBIRD_HOME=/Library/Frameworks/Firebird.framework/Resources
+export PATH=$PATH:$FIREBIRD_HOME/bin

@@ -1,26 +1,54 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
+"
+" To install Vundle for plugin management, first do this:
+"
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set nocompatible                  " Must come first because it changes other options.
+filetype off
 
-" Vundle Configuration
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-airline'
-Bundle 'vim-gitgutter'
-" Bundle 'weynhamz/vim-plugin-minibufexpl'
-Bundle 'chrisbra/vim-show-whitespace'
+" Vundle Configuration
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline'
+Plugin 'vim-gitgutter'
+Plugin 'chrisbra/vim-show-whitespace'
+Plugin 'flazz/vim-colorschemes'
+
+" All of your Vundle Plugins must be added before the following line
+call vundle#end()                 " required
+
+filetype plugin indent on         " Turn on file type detection.
+
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
@@ -73,7 +101,7 @@ autocmd BufWinLeave * call clearmatches()
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 set background=dark
-colorscheme macvim
+colorscheme wombat
 
 " Stop using the arrow keys dammit
 noremap <Up> <nop>
