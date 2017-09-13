@@ -17,3 +17,6 @@ ln -s ${BASEDIR}/git/gitignore ~/.gitignore
 
 # tmux
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
+
+# tmux
+ln -s ${BASEDIR}/gemrc ~/.gemrc

@@ -50,7 +50,7 @@ export TERM=xterm-256color
 plugins=(git jump ruby zsh-syntax-highlighting)
 # User configuration
 
-export PATH="/Users/boontdustie/bin:/usr/local/bin:/usr/local/heroku/bin:/Users/boontdustie/.rbenv/shims:/usr/local/heroku/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pgsql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/usr/texbin:/usr/local/bin/elixir"
+export PATH="/Users/boontdustie/sw/bin:/Users/boontdustie/bin:/usr/local/bin:/usr/local/heroku/bin:/Users/boontdustie/.rbenv/shims:/usr/local/heroku/bin:~/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:/usr/local/pgsql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/sbin:/usr/texbin:/usr/local/bin/elixir:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
@@ -83,11 +83,14 @@ alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -lah'   # Long view, show hidden
+alias ls='ls -aGh'  # force ls to show everything (a), use colors (G) and humanize file sizes
 alias la='ls -AF'   # Compact view, show hidden
 alias ll='ls -lFh'  # Long view, no hidden
 
 # Git
 alias g="git status"
+alias ga="git add"
+alias gc="git clone"
 
 # Garrett Scripts
 alias lynxer="~/scripts/lynxer"
@@ -123,3 +126,37 @@ genpasswd() {
 
 export FIREBIRD_HOME=/Library/Frameworks/Firebird.framework/Resources
 export PATH=$PATH:$FIREBIRD_HOME/bin
+
+PATH="/Users/boontdustie/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/boontdustie/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/boontdustie/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/boontdustie/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/boontdustie/perl5"; export PERL_MM_OPT;
+
+# Ruby / Unix Workshop
+
+alias scenic="cd ~/git/src/scenic"
+
+cls() {
+  cd "$1"
+  ls
+}
+
+mcdc() {
+  mkdir "$1"
+  cd "$1"
+}
+
+catman() {
+  man "$1" | cat
+}
+
+export HOMEBREW_BUILD_FROM_SOURCE=1
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/libxslt/bin:$PATH"
+
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi

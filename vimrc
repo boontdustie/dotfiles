@@ -8,9 +8,6 @@
 set nocompatible                  " Must come first because it changes other options.
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " Vundle Configuration
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
