@@ -95,6 +95,7 @@ alias gc="git clone"
 # Garrett Scripts
 alias lynxer="~/scripts/lynxer"
 alias cmd="~/scripts/cmd"
+alias weather="~/scripts/weather"
 alias gistit='~/scripts/gistit'
 alias log='~/scripts/log'
 alias rebase='~/scripts/rebase'
@@ -151,12 +152,28 @@ catman() {
   man "$1" | cat
 }
 
-export HOMEBREW_BUILD_FROM_SOURCE=1
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="/usr/local/opt/libxslt/bin:$PATH"
+todo() {
+  todo_file=~/.todo_file.txt
 
-if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
-  . ~/.config/exercism/exercism_completion.zsh
-fi
+  # if the file doesn't exit, create it
+  if test ! -f "$todo_file"
+  then
+    touch "$todo_file"
+  fi
+
+  case "$1" in
+    "list")
+      cat "$todo_file"
+      ;;
+    "add")
+      echo "$2" >> "$todo_file"
+      ;;
+    "complete")
+      to_write=$(grep -v "$2" "$todo_file")
+      echo "$to_write" > "$todo_file"
+      ;;
+    *)
+      ""
+      ;;
+  esac
+}

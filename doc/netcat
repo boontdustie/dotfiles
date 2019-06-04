@@ -1,0 +1,20 @@
+# nc for transferring files
+
+On the computer with the file you want to move: 
+
+cat /etc/hosts | nc -l 9999 
+
+On the receiving end: 
+
+nc 192.168.1.100 9999 > etc.hosts 
+
+Of course, you can use the tar trick over nc, arrange the input/output
+in different ways, etc, etc, etc. 
+
+e.g., 
+
+tar cvf - some-dir | nc -l 9999 
+
+and 
+
+nc 192.168.1.100 9999 | tar xf -
