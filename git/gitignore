@@ -6,7 +6,6 @@ vendor/bundle
 .projectile
 custom_plan.rb
 zeus.json
-audio/
 
 # -*- mode: gitignore; -*-
 *~
@@ -40,7 +39,6 @@ tramp
 
 # cask packages
 .cask/
-dist/
 
 # Flycheck
 flycheck_*.el

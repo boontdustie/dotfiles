@@ -1,6 +1,6 @@
 # Will contain values used by other scripts and applications
 
-export PATH="~/bin:/usr/local/bin:$PATH:/usr/local/sbin"
+export PATH="~/bin:/usr/local/bin:$PATH:/usr/local/sbin:/Library/Frameworks/Mono.framework/Versions/Current/bin/mono"
 export CLICOLOR=1
 export LSCOLORS=CxFxCxDxBxegedabagacad
 export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -f'
